@@ -82,7 +82,7 @@ body {
 
 .social-icon {
   font-size: 1.5rem;
-  color: white;
+  color:blue;
   transition: all 0.3s ease;
 }
 
@@ -922,4 +922,28 @@ body {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Toast Notifications */
+.Toastify__toast-container {
+  width: auto;
+  max-width: 400px;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: inherit;
+}
+
+.Toastify__toast--success {
+  background: var(--primary);
+}
+
+.Toastify__toast--error {
+  background: var(--accent);
+}
+
+.Toastify__progress-bar {
+  height: 3px;
 }

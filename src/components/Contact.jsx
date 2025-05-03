@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPaperPlane, FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaThereads } from 'react-icons/fa';
+import { FaPaperPlane, FaGithub, FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,18 +25,32 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulación de envío
-    setTimeout(() => {
-      console.log('Formulario enviado:', formData);
-      setIsSubmitting(false);
+    setIsError(false);
+    setSubmitMessage('');
+
+    // Configuración de EmailJS
+    emailjs.send(
+      'service_6y06bhr', // Service ID
+      'template_u4uscad', // Template ID
+      formData,
+      'ye_xijHB98wMOCVMe' // Public Key
+    )
+    .then((response) => {
+      console.log('Email enviado con éxito!', response.status, response.text);
       setSubmitMessage('¡Mensaje enviado con éxito!');
       setFormData({ name: '', email: '', message: '' });
-      
+    })
+    .catch((error) => {
+      console.error('Error al enviar el email:', error);
+      setSubmitMessage('Error al enviar el mensaje. Por favor intenta nuevamente.');
+      setIsError(true);
+    })
+    .finally(() => {
+      setIsSubmitting(false);
       setTimeout(() => {
         setSubmitMessage('');
-      }, 3000);
-    }, 1500);
+      }, 5000);
+    });
   };
 
   return (
@@ -119,7 +135,7 @@ const Contact = () => {
                 
                 {submitMessage && (
                   <motion.div
-                    className="submit-message"
+                    className={`submit-message ${isError ? 'error' : 'success'}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                   >
@@ -160,21 +176,18 @@ const Contact = () => {
             </div>
             
             <div className="social-links">
-              <a href="https://github.com/tu-perfil" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/rafa-hud?fbclid=IwZXh0bgNhZW0CMTEAYnJpZBEwYkdWVnhPYk1LOUZDSGlDcwEeaD6Fs0VV6617ULd80BlomvQfBBFzVFVJebYZZeNG7fKdd6x_v9al4PxMCZI_aem_V4kh1yeQLlxiWMMiw_A66w" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="social-icon" />
               </a>
-              <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/rafael-jim%C3%A9nez-109507363/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="social-icon" />
               </a>
-              
-              <a href="https://www.instagram.com/tu-perfil/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/jmz.rafa.20?igsh=eDdvcGh0M2YwN3hm" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="social-icon" />
               </a>
-              <a href="" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/share/1AWFupGo4e/" target="_blank" rel="noopener noreferrer">
                 <FaFacebook className="social-icon" />
               </a>
-              
-              
             </div>
           </motion.div>
         </div>

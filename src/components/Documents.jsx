@@ -10,23 +10,38 @@ const Documents = ({ setActiveDoc }) => {
       id: 1, 
       name: 'Certificación en Desarrollo de Codigo de Software', 
       type: 'pdf', 
-      url: '/assets/documents/cert-web.pdf',
+      url: 'cert-web.pdf',
       preview: 'cert-web.jpeg'
     },
     { 
       id: 2, 
       name: 'Currículum Vitae', 
       type: 'pdf', 
-      url: '/assets/documents/cv.pdf',
-      preview: '/assets/documents/previews/cv.jpg'
+      url: 'cv.pdf',
+      preview: 'cv.jpeg'
     },
     { 
       id: 3, 
-      name: 'Certificación en JavaScript', 
-      type: 'pdf', 
-      url: '/assets/documents/cert-js.pdf',
-      preview: '/assets/documents/previews/cert-js.jpg'
-    }
+      name: 'Reconocimiento', 
+      type: 'image', 
+      url: 'reconocimiento.jpeg',
+      preview: 'reconocimiento.jpeg'
+    },
+    { 
+        id: 4, 
+        name: 'Titulo de Tecnico en Programación',
+        type: 'image', 
+        url: 'titulo.jpeg',
+        preview: 'titulo.jpeg'
+      },
+      { 
+        id: 5,
+        name: 'Cédula de Evaluación',
+        type: 'image', 
+        url: 'cedula.jpeg',
+        preview: 'cedula.jpeg'
+      }
+
   ];
 
   const toggleExpand = (id) => {

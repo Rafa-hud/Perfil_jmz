@@ -27,7 +27,7 @@ const Footer = () => {
             <span className="prompt">$</span> npm run build-portfolio
           </div>
           <div className="terminal-line">
-            <span className="output"> Portafolio construido con éxito!</span>
+            <span className="output"> Portafolio construido con React!</span>
           </div>
           <div className="terminal-line">
             <span className="prompt">$</span> cat message.txt
