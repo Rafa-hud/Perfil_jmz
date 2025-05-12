@@ -947,3 +947,51 @@ body {
 .Toastify__progress-bar {
   height: 3px;
 }
+
+
+/* Estilos para el contador de visitas */
+.visit-counter {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Estilos para la etiqueta de perfil */
+.profile-badge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: #2c3e50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-badge span:first-child {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.profile-image-container {
+  position: relative;
+}
+
+/* Efectos para los iconos sociales */
+.social-icon {
+  transition: all 0.3s ease;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
