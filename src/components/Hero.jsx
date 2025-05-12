@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 const Hero = () => {
   const [visitCount, setVisitCount] = useState(0);
   const [socialText, setSocialText] = useState('');
-  const socialPhrase = "Conéctate conmigo →";
+  const socialPhrase = "Coonéctate conmigo → ";
   const [showSocials, setShowSocials] = useState(false);
 
   // Contador de visitas
