@@ -16,7 +16,7 @@ const Timeline = () => {
       id: 2,
       title: 'Tecnologías de la Información',
       company: 'Universidad Tecnológica del Valle de Toluca',
-      date: '2023 - Presente',
+      date: '2023 - 2025',
       description: 'Estudiante de Tecnologías de la Información, especializado en desarrollo de software multiplataforma.',
       icon: <FaUniversity />,
       type: 'education'
@@ -37,11 +37,11 @@ const Timeline = () => {
     {
       id: 3,
       title: 'Proyectos Personales',
-      company: 'Freelance',
-      date: '2021 - Presente',
-      description: 'Desarrollo de aplicaciones web y móviles, participación en hackathones y contribuciones a código abierto.',
+      company: 'Corvus Data',
+      date: '2025 - Finalizado',
+      description: 'SistemaPeaje, Automatizar el cobro por el uso de una vía, permitiendo el paso sin detenerse.',
       icon: <FaTerminal />,
-      type: 'project'
+      type: 'Proyecto'
     }
   ];
 

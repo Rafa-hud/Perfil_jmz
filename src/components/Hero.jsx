@@ -92,7 +92,6 @@ const Hero = () => {
         <h1 className="hero-title">RAFAEL JIMÉNEZ MARTÍNEZ</h1>
         <h2 className="hero-subtitle">Técnico en Programación</h2>
         
-        {/* Efecto de programación para redes sociales */}
         <div className="social-intro">
           <motion.p
             initial={{ opacity: 0 }}
